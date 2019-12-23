@@ -1,1 +1,1 @@
-# 120-600-Cell
+# 4D polychorons
