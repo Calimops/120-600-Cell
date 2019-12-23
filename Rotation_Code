@@ -1,16 +1,8 @@
 import numpy as np
 
-d1 = 36
-d2 = 36
+def x(ab, ac, ad, bc, bd, cd):
 
-ab = 0
-ac = 0
-ad = 0
-bc = 0
-bd = 0
-cd = 0
-
-xx = [ab, ac, ad, bc, bd, cd]
+    return [ab, ac, ad, bc, bd, cd]
 
 def rot_ab(u):
 
@@ -91,7 +83,9 @@ def rotations(u):
     return M
 
 
-def rotator(n):
+def rotator(n, ab, ac, ad, bc, bd, cd):
+
+    xx = x(ab, ac, ad, bc, bd, cd)
 
     M = np.asarray([[1, 0, 0, 0],
                     [0, 1, 0, 0],
@@ -104,7 +98,7 @@ def rotator(n):
             
     return M
                  
-def projection1(x):
+def projection1(x, d1):
 
     u = d1/(d1 - x[3])
     y = x[:3]
@@ -112,10 +106,11 @@ def projection1(x):
     
     return z
 
-def projection2(x):
+def projection2(x, d2):
 
     u = d2/(d2 - x[2])
     y = x[:2]
     z = u*y
     
     return z
+
